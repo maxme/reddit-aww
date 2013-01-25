@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>FIXME</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="css/jquery.mobile.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    var userAgent = navigator.userAgent + '';
+    if (userAgent.indexOf('iPhone') > -1) {
+      document.write('<script src="js/lib/cordova-ios.js"></sc' + 'ript>');
+      var mobile_system = 'iphone';
+    } else if (userAgent.indexOf('Android') > -1) {
+      document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+      var mobile_system = 'android';
+    } else {
+      var mobile_system = '';
+    }
+  </script>
+  <!-- <script src="http://jsconsole.com/remote.js?59D74F33-90B4-429E-B0E4-5847B133FF26"></script> -->
+  <!--  <script src="http://debug.phonegap.com/target/target-script-min.js#MOPMOP"></script> http://debug.phonegap.com/client/#MOPMOP -->
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/bootstrap.js"></script>
+  <script src="js/lib/jquery.mobile.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="home">
+  <div data-role="content">
+    <div class="content-primary" id="content">
+      <ul id="list" data-theme="a" data-role="listview">
+      <li id="load">Loading Data...</li>
+      </ul>
+    </div>
+    <!-- /contentprimary -->
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false">
+  </div>
+  <!-- /footer -->
+</div>
+
+</body>
+</html>
