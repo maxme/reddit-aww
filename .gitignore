@@ -1,0 +1,28 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse and IDEA project files
+.classpath
+.project
+.idea
+
+# build
+build/
+
+# ios specific files
+ios/cordova/console.log
+ios/*/project.xcworkspace/xcuserdata
