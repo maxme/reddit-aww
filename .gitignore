@@ -25,4 +25,5 @@ build/
 
 # ios specific files
 ios/cordova/console.log
-ios/*/project.xcworkspace/xcuserdata
+ios/*/project.xcworkspace/
+*xcuserdata/
