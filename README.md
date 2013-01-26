@@ -1,21 +1,31 @@
-# Basic Phonegap (Cordova) & JQuery Mobile Boilerplate for iOS and Android
-Run this script to generate Cordova projects and links to the common/www directory on both ios and android projects:
+## What
 
-    $ scripts/init-cordova-project.sh
+This is a reddit/r/Aww image brower. HTML5 / Javascript (jquery)
+wrapped in Cordova.
 
-# Changelog:
-01.25.2013
-- libs updated to: cordova 2.3.0 final, jquery mobile 1.3.0 beta
-- forked from https://github.com/sebbie1o1/cordova-jquerymobile-boilerplate
+## Build
+### iOS:
 
-03.05.2012
-- libs updated to: cordova 1.7 final, jquery mobile 1.1.0 final
+    $ ios/cordova/build
 
-# Links
+### Android
 
-* Phonegap: http://phonegap.com
-* Jquery Mobile: http://jquerymobile.com
+    $ android/cordova/build
 
-# LICENSE
-MIT
+## Run
+### iOS
 
+    $ ios/cordova/emulate # run in iOS simulator
+
+### Android
+
+    $ android/cordova/run # run in Android emulator
+
+## Install
+### iOS
+
+Run XCode and open project ios/rue89.xcodeproj, then build and run for device.
+
+### Android
+
+    $ adb install android/bin/rue89-debug.apk
