@@ -27,19 +27,6 @@
             }
         };
 
-        // bind left and right keypress
-        $(document).keydown(function (e) {
-            console.log("pouet");
-            switch (e.keyCode) {
-                case e.keyCode.LEFT:
-                    console.log("press left");
-                    break;
-                case e.keyCode.RIGHT:
-                    console.log("press right");
-                    break;
-            }
-        });
-
         $.extend(settings, options || {});
 
         return this.each(function () {
