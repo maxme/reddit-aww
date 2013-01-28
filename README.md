@@ -28,4 +28,4 @@ Run XCode and open project ios/rue89.xcodeproj, then build and run for device.
 
 ### Android
 
-    $ adb install android/bin/rue89-debug.apk
+    $ adb install android/bin/RedditAww-debug.apk
