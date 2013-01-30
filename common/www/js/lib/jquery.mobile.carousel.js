@@ -12,7 +12,6 @@
  */
 
 (function ($) {
-
     $.fn.carousel = function (options) {
         var settings = {
             duration:300,
