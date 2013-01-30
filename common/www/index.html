@@ -25,11 +25,11 @@
     <!--  <script src="http://debug.phonegap.com/target/target-script-min.js#MOPMOP"></script> http://debug.phonegap.com/client/#MOPMOP -->
     <script src="js/lib/jquery.js"></script>
     <script src="js/lib/jquery-ui-1.10.0.custom.js"></script>
-    <script src="js/lib/jquery.ui.touch-punch.js"></script>
     <script src="js/lib/jquery.mobile.carousel.js"></script>
-    <script src="js/app/app.js"></script>
     <script src="js/app/bootstrap.js"></script>
+    <script src="js/app/app.js"></script>
     <script src="js/lib/jquery.mobile.js"></script>
+    <!--    <script src="js/lib/jquery.animate-enhanced.js"></script> -->
 </head>
 <body>
 
@@ -38,30 +38,34 @@
     <div data-role="panel" id="panelmenu" data-theme="a">
         <a href="#title" data-rel="close" data-role="button" data-icon="delete">Close</a>
 
-        <h3>Filters</h3>
-        <ul id="listfilters" data-theme="a" data-role="listview" data-inset="true">
-            <li>New</li>
-            <li>Top</li>
-        </ul>
+        <fieldset data-role="controlgroup" id="option-filters">
+            <legend>Sort Method</legend>
+            <input type="radio" name="option-filters" id="hot"/>
+            <label for="hot">hot</label>
+            <input type="radio" name="option-filters" id="new"/>
+            <label for="new">new</label>
+            <input type="radio" name="option-filters" id="top"/>
+            <label for="top">top</label>
+        </fieldset>
 
-        <h3>Sections</h3>
-        <ul id="listsections" data-theme="a" data-role="listview" data-inset="true">
-            <li>Aww</li>
-            <li>Pics</li>
-            <li>FIXME</li>
-        </ul>
+        <fieldset data-role="controlgroup" id="option-sections">
+            <legend>Subreddit</legend>
+            <input type="radio" name="option-sections" id="aww" value="choice-1"/>
+            <label for="aww">aww</label>
+            <input type="radio" name="option-sections" id="pics" value="choice-2"/>
+            <label for="pics">pics</label>
+            <input type="button" name="option-sections" data-icon="plus" id="add" value="add a subreddit"/>
+        </fieldset>
 
     </div>
 
-    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="true" id="title">
+    <div data-role="header" data-theme="a" data-position="fixed" id="title">
         <h1>Reddit Aww</h1>
-        <a href="#panelmenu" data-icon="arrow-l">Menu</a>
+        <a id="menubutton" href="#panelmenu" data-icon="arrow-l">Menu</a>
     </div>
     <!-- /header -->
 
-    <div data-role="content">
-        <ul class="gallery">
-        </ul>
+    <div data-role="content" data-theme="a" id="imagecontainer">
     </div>
     <!-- /content -->
 
