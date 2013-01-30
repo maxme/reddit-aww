@@ -1,3 +1,12 @@
 .imagecontainer {
     /*padding:2;*/
 }
+
+.gallery {
+    padding: 0;
+}
+
+.gallery li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}

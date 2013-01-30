@@ -56,9 +56,7 @@ function optionChanged() {
         filter = "hot";
     }
     console.log("optionChanged - selected subreddit=" + subreddit + " sort=" + filter);
-    fetchImages(subreddit, filter, 5, function () {
-        attachCarousel();
-    });
+    fetchImages(subreddit, filter, 5);
 }
 
 function attachCarousel() {
@@ -114,7 +112,9 @@ function fetchImages(subreddit, filter, limit, done) {
                     node.wrap("<li/>");
                 }
             });
-            done();
+            if (done) {
+                done();
+            }
         }
     });
 }
