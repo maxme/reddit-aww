@@ -1,9 +1,16 @@
 function startApp() {
+    console.log("startApp");
     bindOptions();
     optionChanged();
     // load options when panel opens
     $(document).delegate('#panelmenu', 'panelbeforeopen', function (ui, e) {
         loadOptions();
+    });
+    $(window).scroll(function (data) {
+        var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+        if (scrollBottom < 5000) {
+            fetchImageAfterScroll();
+        }
     });
 }
 
@@ -16,7 +23,7 @@ function loadOptions() {
     $("#" + filter).attr("checked", true).checkboxradio("refresh");
     $("#option-filters input").checkboxradio("refresh");
 
-    // load options
+    // load secton
     var option = localStorage.getItem("selected-section");
     if (option == null) {
         option = "aww";
@@ -45,7 +52,7 @@ function bindOptions() {
     });
 }
 
-function optionChanged() {
+function readSubredditAndFilter() {
     var localStorage = window.localStorage;
     var subreddit = localStorage.getItem("selected-section");
     if (subreddit == null) {
@@ -55,10 +62,21 @@ function optionChanged() {
     if (filter == null) {
         filter = "hot";
     }
-    console.log("optionChanged - selected subreddit=" + subreddit + " sort=" + filter);
-    fetchImages(subreddit, filter, 5, function () {
-        attachCarousel();
-    });
+    return [subreddit, filter];
+}
+
+
+
+function fetchImageAfterScroll() {
+    subfilt = readSubredditAndFilter();
+    fetchImages(subfilt[0], subfilt[1], 20, attachCarousel, false);
+}
+
+function optionChanged() {
+    subfilt = readSubredditAndFilter();
+    fetchImages(subfilt[0], subfilt[1], 20, attachCarousel, true);
+    // Update title
+    $("#apptitle").html("/r/" + subfilt[0] + " - " + subfilt[1]);
 }
 
 function attachCarousel() {
@@ -77,44 +95,4 @@ function fit(node) {
         $(node).width(newWidth);
     }
     console.log("new w=" + $(node).width() + " h=" + $(node).height() + " -ratio=" + ratio);
-}
-
-function fetchImages(subreddit, filter, limit, done) {
-    var jsonpUrl = "http://www.reddit.com/r/" + subreddit + "/" + filter + "/.json?limit=" + limit + "&jsonp=?";
-    $.ajax({
-        dataType:"json",
-        url:jsonpUrl,
-        beforeSend:function (request) {
-            request.setRequestHeader("User-Agent",
-                "Reddit Aww viewer for mobile device by /u/maxme - https://github.com/maxme/reddit-aww");
-        },
-        success:function (data) {
-            // Reset list
-            $("#imagecontainer").html("<ul class=\"gallery\"></ul>");
-            // For each reddit link
-            $.each(data.data.children, function (i, item) {
-                var url = item.data.url;
-                var ext = url.substr(url.length - 4, 4).toLowerCase();
-                var node = null;
-                if (ext == ".jpg" || ext == ".png" || ext == ".gif") {
-                    node = $("<img width=\"100%\"/>").attr("src", url);
-                    node.appendTo("ul.gallery");
-                } else {
-                    /*
-                     // Try to fix imgur.com url - doesn't work really well
-                     if (url.search("imgur.com") !== 0) {
-                     url += ".jpg";
-                     node = $("<img  width=\"100%\"/>").attr("src", url);
-                     node.appendTo("ul.gallery");
-                     }
-                     */
-                }
-                //node.wrap("<a rel=\"external\" href=\"" + url + "\"/>").wrap("<li/>");
-                if (node != null) {
-                    node.wrap("<li/>");
-                }
-            });
-            done();
-        }
-    });
 }

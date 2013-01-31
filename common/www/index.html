@@ -27,6 +27,7 @@
     <script src="js/lib/jquery-ui-1.10.0.custom.js"></script>
     <script src="js/lib/jquery.mobile.carousel.js"></script>
     <script src="js/app/bootstrap.js"></script>
+    <script src="js/app/redditapi.js"></script>
     <script src="js/app/app.js"></script>
     <script src="js/lib/jquery.mobile.js"></script>
     <!--    <script src="js/lib/jquery.animate-enhanced.js"></script> -->
@@ -60,12 +61,13 @@
     </div>
 
     <div data-role="header" data-theme="a" data-position="fixed" id="title">
-        <h1>Reddit Aww</h1>
+        <h1 id="apptitle">Reddit Aww</h1>
         <a id="menubutton" href="#panelmenu" data-icon="arrow-l">Menu</a>
     </div>
     <!-- /header -->
 
     <div data-role="content" data-theme="a" id="imagecontainer">
+        <ul class="gallery"></ul>
     </div>
     <!-- /content -->
 
@@ -74,4 +76,5 @@
     <!-- /footer -->
 </div>
 </body>
+<script src="js/lib/jquery.mobile.js"></script>
 </html>
