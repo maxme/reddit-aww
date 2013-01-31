@@ -27,3 +27,6 @@ build/
 ios/cordova/console.log
 ios/*/project.xcworkspace/
 *xcuserdata/
+
+# resource files
+resources/AppIcon/
