@@ -15,20 +15,10 @@ function startApp() {
 }
 
 function loadOptions() {
-    // load filters
-    var filter = localStorage.getItem("selected-filter");
-    if (filter == null) {
-        filter = "top";
-    }
-    $("#" + filter).attr("checked", true).checkboxradio("refresh");
-    $("#option-filters input").checkboxradio("refresh");
-
-    // load secton
-    var option = localStorage.getItem("selected-section");
-    if (option == null) {
-        option = "aww";
-    }
-    $("#" + option).attr("checked", true);
+    var subfilt = readSubredditAndFilter();
+    $("#" + subfilt[1]).attr("checked", true);
+    $("#option-filters input[type='radio']").checkboxradio("refresh");
+    $("#" + subfilt[0]).attr("checked", true);
     $("#option-sections input[type='radio']").checkboxradio("refresh");
 }
 
