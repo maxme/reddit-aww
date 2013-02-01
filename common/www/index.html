@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="css/jquery.mobile.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <!-- <link rel="stylesheet" href="css/carousel.css"/> -->
 
     <script>
         var userAgent = navigator.userAgent + '';
@@ -39,21 +38,30 @@
             <legend>Sort Method</legend>
             <input type="radio" name="option-filters" id="hot"/>
             <label for="hot">hot</label>
+            <!-- FIXME: reddit jsonp url doesn't return "after" value on new...
             <input type="radio" name="option-filters" id="new"/>
-            <label for="new">new</label>
+            <label for="new">new</label> -->
             <input type="radio" name="option-filters" id="top"/>
             <label for="top">top</label>
         </fieldset>
 
         <fieldset data-role="controlgroup" id="option-sections">
             <legend>Subreddit</legend>
-            <input type="radio" name="option-sections" id="aww" value="choice-1"/>
+            <input type="radio" name="option-sections" id="aww"/>
             <label for="aww">aww</label>
-            <input type="radio" name="option-sections" id="pics" value="choice-2"/>
+            <input type="radio" name="option-sections" id="cats"/>
+            <label for="cats">cats</label>
+            <input type="radio" name="option-sections" id="dogpictures"/>
+            <label for="dogpictures">dogpictures</label>
+            <input type="radio" name="option-sections" id="catpictures"/>
+            <label for="catpictures">catpictures</label>
+            <input type="radio" name="option-sections" id="pics"/>
             <label for="pics">pics</label>
+            <span id="custom-subreddits"></span>
+            <input type="text" name="options-sections" id="add-text" value="something"/>
+            <input type="button" name="option-sections" id="addit" value="add /r/"/>
             <input type="button" name="option-sections" data-icon="plus" id="add" value="add a subreddit"/>
         </fieldset>
-
     </div>
 
     <div data-role="header" data-theme="a" data-position="fixed" id="title">
@@ -73,4 +81,5 @@
 </div>
 </body>
 <script src="js/lib/jquery.mobile.js"></script>
+
 </html>

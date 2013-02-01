@@ -2,7 +2,7 @@ var fetchImages = (function () {
     var afterId = "";
     var loading = false;
 
-    function fetchImages(subreddit, filter, limit, done, resetList) {
+    function fetchImages(subreddit, filter, limit, done, resetList, error) {
         // If page is loading, return
         if (loading) {
             return;
@@ -19,10 +19,15 @@ var fetchImages = (function () {
             afterId = "";
         }
 
+        if (afterId == null) {
+            afterId = "";
+        }
+
         // Reddit json API
         var jsonpUrl = "http://www.reddit.com/r/" + subreddit + "/" + filter + "/.json?limit=" + limit
             + "&after=" + afterId + "&jsonp=?";
 
+        // FIXME: console.log("reddit url=" + jsonpUrl);
         // HTTP request
         $.ajax({
             dataType:"json",
@@ -31,7 +36,9 @@ var fetchImages = (function () {
                 request.setRequestHeader("User-Agent",
                     "Reddit Aww viewer for mobile device by /u/maxme - https://github.com/maxme/reddit-aww");
             },
-            success:function (data) {
+            success:function (data, textStatus, jqXHR) {
+                if (jqXHR.status !== 200)
+                    return ;
                 // Reset list
                 if (resetList == true) {
                     $("#imagecontainer").html("<ul class=\"gallery\"></ul>");
@@ -55,7 +62,8 @@ var fetchImages = (function () {
                     done();
                 }
                 loading = false;
-            }
+            },
+            error: error,
         });
     }
     return fetchImages;
