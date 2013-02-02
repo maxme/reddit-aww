@@ -69,6 +69,5 @@ function readSubredditAndFilter() {
     if (filter == null) {
         filter = "hot";
     }
-    console.log("subreddit=" + subreddit + " filter=" + filter);
     return [subreddit, filter];
 }

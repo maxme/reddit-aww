@@ -4,14 +4,14 @@
 
     var initApp = function () {
         if ((device_ready && jqm_mobile_init) || (jqm_mobile_init && !mobile_system)) {
-            console.log('start app');
+            // console.log('start app');
             startApp();
         }
     };
 
     var onDeviceReady = function () {
         device_ready = true;
-        console.log('dev ready');
+        // console.log('dev ready');
         initApp();
     };
 
@@ -19,7 +19,7 @@
         $.support.cors = true;
         $.mobile.allowCrossDomainPages = true;
         jqm_mobile_init = true;
-        console.log('jqm ready');
+        // console.log('jqm ready');
         initApp();
     };
 

@@ -2,6 +2,7 @@
 
 function startApp() {
     console.log("startApp");
+    cordovaInit();
     bindOptions();
     optionChanged();
     showCustomSubreddits();

@@ -40,6 +40,7 @@
         <plugin name="File" value="CDVFile" />
         <plugin name="SplashScreen" value="CDVSplashScreen" />
         <plugin name="NetworkStatus" value="CDVConnection" />
+        <plugin name="InAppBrowser" value="CDVInAppBrowser" />
 <!--
         <plugin name="Compass" value="CDVLocation" />
         <plugin name="Accelerometer" value="CDVAccelerometer" />
@@ -53,7 +54,6 @@
         <plugin name="Capture" value="CDVCapture" />
         <plugin name="Battery" value="CDVBattery" />
         <plugin name="Globalization" value="CDVGlobalization" />
-        <plugin name="InAppBrowser" value="CDVInAppBrowser" />
 -->
     </plugins>
 

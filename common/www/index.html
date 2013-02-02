@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>Reddit Aww</title>
@@ -10,7 +10,7 @@
 
     <script>
         var userAgent = navigator.userAgent + '';
-        if (userAgent.indexOf('iPhone') > -1 || userAgent.indexOf('iPad') > -1 ) {
+        if (userAgent.indexOf('iPhone') > -1 || userAgent.indexOf('iPad') > -1 || userAgent.indexOf('iPod') > -1) {
             document.write('<script src="js/lib/cordova-ios.js"></sc' + 'ript>');
             var mobile_system = 'iphone';
         } else if (userAgent.indexOf('Android') > -1) {
@@ -23,6 +23,7 @@
     <!--  <script src="http://jsconsole.com/remote.js?59D74F33-90B4-429E-B0E4-5847B133FF26"></script> -->
     <!--  <script src="http://debug.phonegap.com/target/target-script-min.js#MOPMOP"></script> http://debug.phonegap.com/client/#MOPMOP -->
     <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/cordova-utils.js"></script>
     <script src="js/app/bootstrap.js"></script>
     <script src="js/app/redditapi.js"></script>
     <script src="js/app/subreddits.js"></script>
@@ -46,7 +47,7 @@
             <label for="top">top</label>
         </fieldset>
 
-        <fieldset data-theme="b"  data-role="controlgroup" id="option-sections">
+        <fieldset data-theme="b" data-role="controlgroup" id="option-sections">
             <legend>Subreddit</legend>
             <input type="radio" data-theme="b" name="option-sections" id="aww"/>
             <label for="aww">aww</label>
@@ -54,14 +55,30 @@
 
             <input type="text" data-theme="b" name="options-sections" id="add-text" value="pics"/>
             <input type="button" data-theme="b" name="option-sections" id="addit" value="add /r/"/>
-            <input type="button" data-theme="b" name="option-sections" data-icon="plus" id="add" value="add a subreddit"/>
-            <input type="button" data-theme="b" name="option-sections" data-icon="delete" id="clearall" value="clear custom"/>
+            <input type="button" data-theme="b" name="option-sections" data-icon="plus" id="add"
+                   value="add a subreddit"/>
+            <input type="button" data-theme="b" name="option-sections" data-icon="delete" id="clearall"
+                   value="clear custom"/>
         </fieldset>
+    </div>
+
+    <div data-role="panel" data-position-fixed="true" id="panelinfos" data-position="right" data-theme="a">
+        <a href="#title" data-rel="close" data-role="button" data-icon="delete">Close</a>
+
+        <p>
+            Reddit Aww written by: <a href="#" class="extlink" rel="https://github.com/maxme">Maxime Biais</a>. Thanks
+            to jQuery, jQueryMobile and Cordova.
+        </p>
+
+        <p>
+            Image lists are fetched from the <a href="#" class="extlink" rel="http://reddit.com">Reddit</a> website.
+        </p>
     </div>
 
     <div data-role="header" data-theme="a" data-position="fixed" id="title">
         <h1 id="apptitle">Reddit Aww</h1>
         <a id="menubutton" href="#panelmenu" data-icon="arrow-l">Menu</a>
+        <a id="infobutton" href="#panelinfos" data-icon="info">Infos</a>
     </div>
     <!-- /header -->
 
