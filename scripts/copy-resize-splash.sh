@@ -8,7 +8,7 @@ fi
 source=$1
 out=..
 outf=$out/ios/RedditAww/Resources/splash
-outf=/tmp/mop
+#outf=/tmp/mop
 
 function resizeAndCrop() {
     size=$1
