@@ -39,6 +39,7 @@
     <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
     <plugin name="File" value="org.apache.cordova.FileUtils"/>
     <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
 
 <!--
     <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>
@@ -53,7 +54,7 @@
     <plugin name="Battery" value="org.apache.cordova.BatteryListener"/>
     <plugin name="Echo" value="org.apache.cordova.Echo" />
     <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
+
 -->
 </plugins>
 </cordova>
