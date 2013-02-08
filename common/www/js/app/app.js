@@ -28,12 +28,6 @@ function startApp() {
             fetchImageAfterScroll();
         }
     });
-    $("#imagecontainer").swiperight(function() {
-        $("#panelmenu").panel("open");
-    });
-    $("#imagecontainer").swipeleft(function() {
-        $("#panelinfos").panel("open");
-    });
 }
 
 function loadOptions() {
