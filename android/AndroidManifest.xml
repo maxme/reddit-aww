@@ -18,7 +18,7 @@
        under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:windowSoftInputMode="adjustPan"
-      package="org.biais.redditaww" android:versionName="1.2" android:versionCode="6" android:hardwareAccelerated="true">
+      package="org.biais.redditawww" android:versionName="1.2" android:versionCode="6" android:hardwareAccelerated="true">
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"

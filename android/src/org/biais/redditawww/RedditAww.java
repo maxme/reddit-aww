@@ -17,7 +17,7 @@
        under the License.
  */
 
-package org.biais.redditaww;
+package org.biais.redditawww;
 
 import android.app.Activity;
 import android.os.Bundle;
