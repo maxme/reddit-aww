@@ -49,11 +49,10 @@ var fetchImages = (function () {
                     var url = item.data.url;
                     var ext = url.substr(url.length - 4, 4).toLowerCase();
                     var node = null;
-                    if (ext == ".jpg" || ext == ".png" || ext == ".gif") {
+                    if (ext == ".jpg" || ext == ".png" || ext = "jpeg") {
                         node = $("<img width=\"100%\"/>").attr("src", url);
                         node.appendTo("ul.gallery");
                     }
-                    //node.wrap("<a rel=\"external\" href=\"" + url + "\"/>").wrap("<li/>");
                     if (node != null) {
                         node.wrap("<li/>");
                     }

@@ -31,8 +31,14 @@ ios/cordova/console.log
 ios/*/project.xcworkspace/
 *xcuserdata/
 
+# android files
+android/ant.properties
+
 # resource files
 resources/icon/
 resources/splash/
+resources/publishing/
+
+
 
 

@@ -16,8 +16,8 @@ convert $source -resize 57x57 $out/ios/RedditAww/Resources/icons/icon.png
 convert $source -resize 114x114 $out/ios/RedditAww/Resources/icons/icon@2x.png
 
 # iTunesArtwork
-# convert $source -resize 512x512 $out/iTunesArtwork.png
-# convert $source -resize 1024x1024 $out/iTunesArtwork@2x.png
+convert $source -resize 512x512 $out/resources/iTunesArtwork.png
+convert $source -resize 1024x1024 $out/resources/iTunesArtwork@2x.png
 
 
 # Android
