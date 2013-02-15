@@ -61,7 +61,7 @@ function bindOptions() {
         var optionId = $(this).attr("id");
         selectSubreddit(optionId);
     });
-    $("#add-text").on("change", function (event, ui) {
+    $("#add-text").on("keyup", function (event, ui) {
         $("#addit").val("add /r/" + $(this).val()).button("refresh");
     });
 }

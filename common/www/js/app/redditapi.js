@@ -47,13 +47,14 @@ var fetchImages = (function () {
                 afterId = data.data.after;
                 $.each(data.data.children, function (i, item) {
                     var url = item.data.url;
+                    url = url.replace('www.imgur', 'i.imgur');
                     var ext = url.substr(url.length - 4, 4).toLowerCase();
                     var node = null;
-                    if (ext == ".jpg" || ext == ".png" || ext = "jpeg") {
+                    if (ext === ".jpg" || ext === ".png" || ext === "jpeg") {
                         node = $("<img width=\"100%\"/>").attr("src", url);
                         node.appendTo("ul.gallery");
                     }
-                    if (node != null) {
+                    if (node !== null) {
                         node.wrap("<li/>");
                     }
                 });
